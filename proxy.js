@@ -10,8 +10,14 @@ const proxies = [
   'https://production.m4-meadow-858e-8asdj09asdjn9087890-asd890as-kcsec987dc-ckd98-cx.f0o8q1z04c.workers.dev/'
 ];
 
+const subproxies = [
+  'https://production.silent-wind-8417-65421635454654-asd66sd-sad5686sd-5sadsa6-54vf9.kqv01rm.workers.dev/',
+  'https://production.mute-mud-c4a1sfds45-as8n7ur9-aa90sdaj09asd-asdas9080aas09dff-as.jonolin512.workers.dev/',
+  'https://production.dry-cake-87726516516-15dfg-dfg15df-45455dfggdfgkh-lumbm645fgh-5.ae0kpo2d88.workers.dev/'
+];
 // Select a random proxy
 const randomIndex = Math.floor(Math.random() * proxies.length);
+const randomIndexSub = Math.floor(Math.random() * subproxies.length);
 const proxy3 = proxies[randomIndex];
-
+const subproxy = subproxies[randomIndexSub];
 var proxy4 = ''; 
