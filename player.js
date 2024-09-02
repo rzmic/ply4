@@ -79,8 +79,8 @@
             $ = a.interopDefault(M),
             F = e("./hotkey"),
             C = a.interopDefault(F),
-            H = e("./layer"),
-            D = a.interopDefault(H),
+            D = e("./layer"),
+            H = a.interopDefault(D),
             B = e("./loading"),
             z = a.interopDefault(B),
             R = e("./notice"),
@@ -101,7 +101,7 @@
             constructor(e, t) {
                 super(), this.id = ++K;
                 let r = u.mergeDeep(G.option, e);
-                if (r.container = e.container, this.option = (0, s.default)(r, d.default), this.isLock = !1, this.isReady = !1, this.isFocus = !1, this.isInput = !1, this.isRotate = !1, this.isDestroy = !1, this.template = new g.default(this), this.events = new $.default(this), this.storage = new W.default(this), this.icons = new Z.default(this), this.i18n = new y.default(this), this.notice = new A.default(this), this.player = new x.default(this), this.layers = new D.default(this), this.controls = new j.default(this), this.contextmenu = new S.default(this), this.subtitle = new E.default(this), this.info = new T.default(this), this.loading = new z.default(this), this.hotkey = new C.default(this), this.mask = new P.default(this), this.setting = new q.default(this), this.plugins = new Y.default(this), "function" == typeof t && this.on("ready", () => t.call(this, this)), G.DEBUG) {
+                if (r.container = e.container, this.option = (0, s.default)(r, d.default), this.isLock = !1, this.isReady = !1, this.isFocus = !1, this.isInput = !1, this.isRotate = !1, this.isDestroy = !1, this.template = new g.default(this), this.events = new $.default(this), this.storage = new W.default(this), this.icons = new Z.default(this), this.i18n = new y.default(this), this.notice = new A.default(this), this.player = new x.default(this), this.layers = new H.default(this), this.controls = new j.default(this), this.contextmenu = new S.default(this), this.subtitle = new E.default(this), this.info = new T.default(this), this.loading = new z.default(this), this.hotkey = new C.default(this), this.mask = new P.default(this), this.setting = new q.default(this), this.plugins = new Y.default(this), "function" == typeof t && this.on("ready", () => t.call(this, this)), G.DEBUG) {
                     let e = e => console.log(`[ART.${this.id}] -> ${e}`);
                     e("Version@" + G.version), e("Env@" + G.env), e("Build@" + G.build);
                     for (let t = 0; t < h.default.events.length; t++) this.on("video:" + h.default.events[t], t => e("Event@" + t.type))
@@ -112,13 +112,13 @@
                 return X
             }
             static get version() {
-                return "5.1.6"
+                return "5.1.7"
             }
             static get env() {
                 return "production"
             }
             static get build() {
-                return "2024-06-15 19:54:25"
+                return "2024-08-15 23:27:07"
             }
             static get config() {
                 return h.default
@@ -149,7 +149,7 @@
                     poster: "",
                     type: "",
                     theme: "#f00",
-                    volume: 1,
+                    volume: .7,
                     isLive: !1,
                     muted: !1,
                     autoplay: !1,
@@ -223,7 +223,8 @@
                 this.events.destroy(), this.template.destroy(e), X.splice(X.indexOf(this), 1), this.isDestroy = !0, this.emit("destroy")
             }
         }
-        r.default = G, G.DEBUG = !1, G.CONTEXTMENU = !0, G.NOTICE_TIME = 2e3, G.SETTING_WIDTH = 250, G.SETTING_ITEM_WIDTH = 200, G.SETTING_ITEM_HEIGHT = 35, G.RESIZE_TIME = 200, G.SCROLL_TIME = 200, G.SCROLL_GAP = 50, G.AUTO_PLAYBACK_MAX = 10, G.AUTO_PLAYBACK_MIN = 5, G.AUTO_PLAYBACK_TIMEOUT = 3e3, G.RECONNECT_TIME_MAX = 5, G.RECONNECT_SLEEP_TIME = 1e3, G.CONTROL_HIDE_TIME = 3e3, G.DBCLICK_TIME = 300, G.DBCLICK_FULLSCREEN = !0, G.MOBILE_DBCLICK_PLAY = !0, G.MOBILE_CLICK_PLAY = !1, G.AUTO_ORIENTATION_TIME = 200, G.INFO_LOOP_TIME = 1e3, G.FAST_FORWARD_VALUE = 3, G.FAST_FORWARD_TIME = 1e3, G.TOUCH_MOVE_RATIO = .5, G.VOLUME_STEP = .1, G.SEEK_STEP = 5, G.PLAYBACK_RATE = [.5, .75, 1, 1.25, 1.5, 2], G.ASPECT_RATIO = ["default", "4:3", "16:9"], G.FLIP = ["normal", "horizontal", "vertical"], G.FULLSCREEN_WEB_IN_BODY = !1, G.LOG_VERSION = !0, G.USE_RAF = !1, u.isBrowser && (window.Artplayer = G, u.setStyleText("artplayer-style", o.default), setTimeout(() => {
+        //change title player
+        r.default = G, G.STYLE = o.default, G.DEBUG = !1, G.CONTEXTMENU = !0, G.NOTICE_TIME = 2e3, G.SETTING_WIDTH = 250, G.SETTING_ITEM_WIDTH = 200, G.SETTING_ITEM_HEIGHT = 35, G.RESIZE_TIME = 200, G.SCROLL_TIME = 200, G.SCROLL_GAP = 50, G.AUTO_PLAYBACK_MAX = 10, G.AUTO_PLAYBACK_MIN = 5, G.AUTO_PLAYBACK_TIMEOUT = 3e3, G.RECONNECT_TIME_MAX = 5, G.RECONNECT_SLEEP_TIME = 1e3, G.CONTROL_HIDE_TIME = 3e3, G.DBCLICK_TIME = 300, G.DBCLICK_FULLSCREEN = !0, G.MOBILE_DBCLICK_PLAY = !0, G.MOBILE_CLICK_PLAY = !1, G.AUTO_ORIENTATION_TIME = 200, G.INFO_LOOP_TIME = 1e3, G.FAST_FORWARD_VALUE = 3, G.FAST_FORWARD_TIME = 1e3, G.TOUCH_MOVE_RATIO = .5, G.VOLUME_STEP = .1, G.SEEK_STEP = 5, G.PLAYBACK_RATE = [.5, .75, 1, 1.25, 1.5, 2], G.ASPECT_RATIO = ["default", "4:3", "16:9"], G.FLIP = ["normal", "horizontal", "vertical"], G.FULLSCREEN_WEB_IN_BODY = !1, G.LOG_VERSION = !0, G.USE_RAF = !1, u.isBrowser && (window.Artplayer = G, u.setStyleText("artplayer-style", o.default), setTimeout(() => {
             G.LOG_VERSION && console.log(`%c Ply4.com %c ${G.version} %c https://ply4.com`, "color: #fff; background: #5f5f5f", "color: #fff; background: #4bc729", "")
         }, 100))
     }, {
@@ -907,7 +908,7 @@
                 (0, a.errorHandle)("div" === i, `Unsupported container element type, only support 'div' but got '${i}'`), (0, a.errorHandle)(r.instances.every(e => e.template.$container !== this.$container), "Cannot mount multiple instances on the same dom element"), this.query = this.query.bind(this), this.$container.dataset.artId = e.id, this.init()
             }
             static get html() {
-                return `<div class="art-video-player art-subtitle-show art-layer-show art-control-show art-mask-show"><video class="art-video"><track default kind="metadata" src=""></track></video><div class="art-poster"></div><div class="art-subtitle"></div><div class="art-danmuku"></div><div class="art-layers"></div><div class="art-mask"><div class="art-state"></div></div><div class="art-bottom"><div class="art-progress"></div><div class="art-controls"><div class="art-controls-left"></div><div class="art-controls-center"></div><div class="art-controls-right"></div></div></div><div class="art-loading"></div><div class="art-notice"><div class="art-notice-inner"></div></div><div class="art-settings"></div><div class="art-info"><div class="art-info-panel"><div class="art-info-item"><div class="art-info-title">Player version:</div><div class="art-info-content">5.1.6</div></div><div class="art-info-item"><div class="art-info-title">Video url:</div><div class="art-info-content" data-video="src"></div></div><div class="art-info-item"><div class="art-info-title">Video volume:</div><div class="art-info-content" data-video="volume"></div></div><div class="art-info-item"><div class="art-info-title">Video time:</div><div class="art-info-content" data-video="currentTime"></div></div><div class="art-info-item"><div class="art-info-title">Video duration:</div><div class="art-info-content" data-video="duration"></div></div><div class="art-info-item"><div class="art-info-title">Video resolution:</div><div class="art-info-content"><span data-video="videoWidth"></span>x<span data-video="videoHeight"></span></div></div></div><div class="art-info-close">[x]</div></div><div class="art-contextmenus"></div></div>`
+                return `<div class="art-video-player art-subtitle-show art-layer-show art-control-show art-mask-show"><video class="art-video"><track default kind="metadata" src=""></track></video><div class="art-poster"></div><div class="art-subtitle"></div><div class="art-danmuku"></div><div class="art-layers"></div><div class="art-mask"><div class="art-state"></div></div><div class="art-bottom"><div class="art-progress"></div><div class="art-controls"><div class="art-controls-left"></div><div class="art-controls-center"></div><div class="art-controls-right"></div></div></div><div class="art-loading"></div><div class="art-notice"><div class="art-notice-inner"></div></div><div class="art-settings"></div><div class="art-info"><div class="art-info-panel"><div class="art-info-item"><div class="art-info-title">Player version:</div><div class="art-info-content">5.1.7</div></div><div class="art-info-item"><div class="art-info-title">Video url:</div><div class="art-info-content" data-video="src"></div></div><div class="art-info-item"><div class="art-info-title">Video volume:</div><div class="art-info-content" data-video="volume"></div></div><div class="art-info-item"><div class="art-info-title">Video time:</div><div class="art-info-content" data-video="currentTime"></div></div><div class="art-info-item"><div class="art-info-title">Video duration:</div><div class="art-info-content" data-video="duration"></div></div><div class="art-info-item"><div class="art-info-title">Video resolution:</div><div class="art-info-content"><span data-video="videoWidth"></span>x<span data-video="videoHeight"></span></div></div></div><div class="art-info-close">[x]</div></div><div class="art-contextmenus"></div></div>`
             }
             query(e) {
                 return (0, a.query)(e, this.$container)
@@ -958,42 +959,42 @@
     "3ZSKq": [function(e, t, r) {
         e("@parcel/transformer-js/src/esmodule-helpers.js").defineInteropFlag(r);
         let a = {
-            "Video Info": "Statistics",
-Close: "Close",
-"Video Load Failed": "Load failed",
-Volume: "Volume",
-Play: "Play",
-Pause: "Pause",
-Rate: "Speed",
-Mute: "Mute",
-"Video Flip": "Flip",
-Horizontal: "Horizontal",
-Vertical: "Vertical",
-Reconnect: "Reconnect",
-"Show Setting": "Show Settings",
-"Hide Setting": "Hide Settings",
-Screenshot: "Screenshot",
-"Play Speed": "Play Speed",
-"Aspect Ratio": "Aspect Ratio",
-Default: "Default",
-Normal: "Normal",
-Open: "Open",
-"Switch Video": "Switch",
-"Switch Subtitle": "Switch Subtitle",
-Fullscreen: "Fullscreen",
-"Exit Fullscreen": "Exit Fullscreen",
-"Web Fullscreen": "Web Fullscreen",
-"Exit Web Fullscreen": "Exit Web Fullscreen",
-"Mini Player": "Mini Player",
-"PIP Mode": "Enable PIP",
-"Exit PIP Mode": "Exit PIP",
-"PIP Not Supported": "PIP Not Supported",
-"Fullscreen Not Supported": "Fullscreen Not Supported",
-"Subtitle Offset": "Subtitle Offset",
-"Last Seen": "Last Seen",
-"Jump Play": "Jump Play",
-AirPlay: "AirPlay",
-"AirPlay Not Available": "AirPlay Not Available"
+            "Video Info": "统计信息",
+            Close: "关闭",
+            "Video Load Failed": "加载失败",
+            Volume: "音量",
+            Play: "播放",
+            Pause: "暂停",
+            Rate: "速度",
+            Mute: "静音",
+            "Video Flip": "画面翻转",
+            Horizontal: "水平",
+            Vertical: "垂直",
+            Reconnect: "重新连接",
+            "Show Setting": "显示设置",
+            "Hide Setting": "隐藏设置",
+            Screenshot: "截图",
+            "Play Speed": "播放速度",
+            "Aspect Ratio": "画面比例",
+            Default: "默认",
+            Normal: "正常",
+            Open: "打开",
+            "Switch Video": "切换",
+            "Switch Subtitle": "切换字幕",
+            Fullscreen: "全屏",
+            "Exit Fullscreen": "退出全屏",
+            "Web Fullscreen": "网页全屏",
+            "Exit Web Fullscreen": "退出网页全屏",
+            "Mini Player": "迷你播放器",
+            "PIP Mode": "开启画中画",
+            "Exit PIP Mode": "退出画中画",
+            "PIP Not Supported": "不支持画中画",
+            "Fullscreen Not Supported": "不支持全屏",
+            "Subtitle Offset": "字幕偏移",
+            "Last Seen": "上次看到",
+            "Jump Play": "跳转播放",
+            AirPlay: "隔空播放",
+            "AirPlay Not Available": "隔空播放不可用"
         };
         r.default = a, "undefined" != typeof window && (window["artplayer-i18n-zh-cn"] = a)
     }, {
@@ -1031,9 +1032,9 @@ AirPlay: "AirPlay",
             $ = e("./fullscreenMix"),
             F = a.interopDefault($),
             C = e("./fullscreenWebMix"),
-            H = a.interopDefault(C),
-            D = e("./pipMix"),
-            B = a.interopDefault(D),
+            D = a.interopDefault(C),
+            H = e("./pipMix"),
+            B = a.interopDefault(H),
             z = e("./loadedMix"),
             R = a.interopDefault(z),
             A = e("./playedMix"),
@@ -1066,13 +1067,15 @@ AirPlay: "AirPlay",
             ep = a.interopDefault(eu),
             ed = e("./qualityMix"),
             ef = a.interopDefault(ed),
-            eh = e("./optionInit"),
+            eh = e("./thumbnailsMix"),
             em = a.interopDefault(eh),
-            eg = e("./eventInit"),
-            ev = a.interopDefault(eg);
+            eg = e("./optionInit"),
+            ev = a.interopDefault(eg),
+            ey = e("./eventInit"),
+            eb = a.interopDefault(ey);
         r.default = class {
             constructor(e) {
-                (0, o.default)(e), (0, s.default)(e), (0, c.default)(e), (0, p.default)(e), (0, f.default)(e), (0, m.default)(e), (0, v.default)(e), (0, b.default)(e), (0, w.default)(e), (0, k.default)(e), (0, I.default)(e), (0, O.default)(e), (0, M.default)(e), (0, F.default)(e), (0, H.default)(e), (0, B.default)(e), (0, R.default)(e), (0, L.default)(e), (0, N.default)(e), (0, _.default)(e), (0, V.default)(e), (0, U.default)(e), (0, K.default)(e), (0, G.default)(e), (0, Q.default)(e), (0, et.default)(e), (0, ea.default)(e), (0, eo.default)(e), (0, es.default)(e), (0, ec.default)(e), (0, ep.default)(e), (0, ef.default)(e), (0, ev.default)(e), (0, em.default)(e)
+                (0, o.default)(e), (0, s.default)(e), (0, c.default)(e), (0, p.default)(e), (0, f.default)(e), (0, m.default)(e), (0, v.default)(e), (0, b.default)(e), (0, w.default)(e), (0, k.default)(e), (0, I.default)(e), (0, O.default)(e), (0, M.default)(e), (0, F.default)(e), (0, D.default)(e), (0, B.default)(e), (0, R.default)(e), (0, L.default)(e), (0, N.default)(e), (0, _.default)(e), (0, V.default)(e), (0, U.default)(e), (0, K.default)(e), (0, G.default)(e), (0, Q.default)(e), (0, et.default)(e), (0, ea.default)(e), (0, eo.default)(e), (0, es.default)(e), (0, ec.default)(e), (0, ep.default)(e), (0, ef.default)(e), (0, em.default)(e), (0, eb.default)(e), (0, ev.default)(e)
             }
         }
     }, {
@@ -1108,6 +1111,7 @@ AirPlay: "AirPlay",
         "./subtitleOffsetMix": "hJvIy",
         "./airplayMix": "4Tp0U",
         "./qualityMix": "3wZgN",
+        "./thumbnailsMix": "k56Iy",
         "./optionInit": "iPdgW",
         "./eventInit": "3mj0J",
         "@parcel/transformer-js/src/esmodule-helpers.js": "guZOB"
@@ -1453,9 +1457,10 @@ AirPlay: "AirPlay",
                     }
                 })
             }), (0, i.def)(e, "screenshot", {
-                value: async () => {
-                    let t = await e.getDataURL();
-                    return (0, i.download)(t, `artplayer_${(0,i.secondToTime)(r.currentTime)}.png`), e.emit("screenshot", t), t
+                value: async t => {
+                    let a = await e.getDataURL(),
+                        o = t || `artplayer_${(0,i.secondToTime)(r.currentTime)}`;
+                    return (0, i.download)(a, `${o}.png`), e.emit("screenshot", a), a
                 }
             })
         }
@@ -2029,7 +2034,7 @@ AirPlay: "AirPlay",
                 set(i) {
                     if (a.$track && a.$track.track) {
                         let l = Array.from(a.$track.track.cues);
-                        n = t(i, -20, 20);
+                        n = t(i, -5, 5);
                         for (let r = 0; r < l.length; r++) {
                             let a = l[r];
                             s[r] || (s[r] = {
@@ -2104,6 +2109,58 @@ AirPlay: "AirPlay",
                             await e.switchQuality(t.url), a.show = `${i.get("Switch Video")}: ${t.html}`
                         }
                     })
+                }
+            })
+        }
+    }, {
+        "../utils": "h3rH9",
+        "@parcel/transformer-js/src/esmodule-helpers.js": "guZOB"
+    }],
+    k56Iy: [function(e, t, r) {
+        var a = e("@parcel/transformer-js/src/esmodule-helpers.js");
+        a.defineInteropFlag(r), a.export(r, "default", () => o);
+        var i = e("../utils");
+
+        function o(e) {
+            let {
+                option: t,
+                events: {
+                    loadImg: r
+                },
+                template: {
+                    $progress: a,
+                    $video: o
+                }
+            } = e, n = null, s = null, l = !1, c = !1;
+            e.on("setBar", async (u, p, d) => {
+                let f = e.controls?.thumbnails,
+                    {
+                        url: h
+                    } = t.thumbnails;
+                if (!f || !h) return;
+                let m = "played" === u && d && i.isMobile;
+                if ("hover" === u || m) {
+                    if (l || (l = !0, s = await r(h), c = !0), !c) return;
+                    let u = a.clientWidth * p;
+                    (0, i.setStyle)(f, "display", "flex"), u > 0 && u < a.clientWidth ? function(r) {
+                        let n = e.controls?.thumbnails;
+                        if (!n) return;
+                        let {
+                            url: l,
+                            number: c,
+                            column: u,
+                            width: p,
+                            height: d
+                        } = t.thumbnails, f = p || s.naturalWidth / u, h = d || f / (o.videoWidth / o.videoHeight), m = Math.floor(r / (a.clientWidth / c)), g = Math.ceil(m / u) - 1;
+                        (0, i.setStyle)(n, "backgroundImage", `url(${l})`), (0, i.setStyle)(n, "height", `${h}px`), (0, i.setStyle)(n, "width", `${f}px`), (0, i.setStyle)(n, "backgroundPosition", `-${(m%u||u-1)*f}px -${g*h}px`), r <= f / 2 ? (0, i.setStyle)(n, "left", 0) : r > a.clientWidth - f / 2 ? (0, i.setStyle)(n, "left", `${a.clientWidth-f}px`) : (0, i.setStyle)(n, "left", `${r-f/2}px`)
+                    }(u) : i.isMobile || (0, i.setStyle)(f, "display", "none"), m && (clearTimeout(n), n = setTimeout(() => {
+                        (0, i.setStyle)(f, "display", "none")
+                    }, 500))
+                }
+            }), (0, i.def)(e, "thumbnails", {
+                get: () => e.option.thumbnails,
+                set(t) {
+                    t.url && !e.option.isLive && (e.option.thumbnails = t, clearTimeout(n), n = null, s = null, l = !1, c = !1)
                 }
             })
         }
@@ -2215,13 +2272,11 @@ AirPlay: "AirPlay",
             x = a.interopDefault(b),
             w = e("./setting"),
             j = a.interopDefault(w),
-            k = e("./thumbnails"),
+            k = e("./screenshot"),
             S = a.interopDefault(k),
-            I = e("./screenshot"),
-            T = a.interopDefault(I),
-            O = e("./airplay"),
-            E = a.interopDefault(O);
-        class M extends n.default {
+            I = e("./airplay"),
+            T = a.interopDefault(I);
+        class O extends n.default {
             constructor(e) {
                 super(e), this.isHover = !1, this.name = "control", this.timer = Date.now();
                 let {
@@ -2250,11 +2305,11 @@ AirPlay: "AirPlay",
                     name: "progress",
                     position: "top",
                     index: 10
-                })), e.thumbnails.url && !e.isLive && this.add((0, S.default)({
+                })), this.add({
                     name: "thumbnails",
                     position: "top",
                     index: 20
-                })), this.add((0, h.default)({
+                }), this.add((0, h.default)({
                     name: "playAndPause",
                     position: "left",
                     index: 10
@@ -2268,7 +2323,7 @@ AirPlay: "AirPlay",
                     index: 30
                 })), e.quality.length && (0, i.sleep)().then(() => {
                     this.art.quality = e.quality
-                }), e.screenshot && !i.isMobile && this.add((0, T.default)({
+                }), e.screenshot && !i.isMobile && this.add((0, S.default)({
                     name: "screenshot",
                     position: "right",
                     index: 20
@@ -2280,7 +2335,7 @@ AirPlay: "AirPlay",
                     name: "pip",
                     position: "right",
                     index: 40
-                })), e.airplay && window.WebKitPlaybackTargetAvailabilityEvent && this.add((0, E.default)({
+                })), e.airplay && window.WebKitPlaybackTargetAvailabilityEvent && this.add((0, T.default)({
                     name: "airplay",
                     position: "right",
                     index: 50
@@ -2318,7 +2373,7 @@ AirPlay: "AirPlay",
                 super.add(t)
             }
         }
-        r.default = M
+        r.default = O
     }, {
         "../utils": "h3rH9",
         "../utils/component": "guki8",
@@ -2330,7 +2385,6 @@ AirPlay: "AirPlay",
         "./time": "7H0CE",
         "./volume": "lMwFm",
         "./setting": "8BrCu",
-        "./thumbnails": "2HiWx",
         "./screenshot": "c1GeG",
         "./airplay": "6GRju",
         "@parcel/transformer-js/src/esmodule-helpers.js": "guZOB"
@@ -2786,51 +2840,6 @@ AirPlay: "AirPlay",
         "../utils": "h3rH9",
         "@parcel/transformer-js/src/esmodule-helpers.js": "guZOB"
     }],
-    "2HiWx": [function(e, t, r) {
-        var a = e("@parcel/transformer-js/src/esmodule-helpers.js");
-        a.defineInteropFlag(r), a.export(r, "default", () => o);
-        var i = e("../utils");
-
-        function o(e) {
-            return t => ({
-                ...e,
-                mounted: e => {
-                    let {
-                        option: r,
-                        events: {
-                            loadImg: a
-                        },
-                        template: {
-                            $progress: o,
-                            $video: n
-                        }
-                    } = t, s = null, l = null, c = !1, u = !1;
-                    t.on("setBar", async (t, p, d) => {
-                        let f = "played" === t && d && i.isMobile;
-                        if ("hover" === t || f) {
-                            if (c || (c = !0, l = await a(r.thumbnails.url), u = !0), !u) return;
-                            let t = o.clientWidth * p;
-                            (0, i.setStyle)(e, "display", "flex"), t > 0 && t < o.clientWidth ? function(t) {
-                                let {
-                                    url: a,
-                                    number: s,
-                                    column: c,
-                                    width: u,
-                                    height: p
-                                } = r.thumbnails, d = u || l.naturalWidth / c, f = p || d / (n.videoWidth / n.videoHeight), h = Math.floor(t / (o.clientWidth / s)), m = Math.ceil(h / c) - 1;
-                                (0, i.setStyle)(e, "backgroundImage", `url(${a})`), (0, i.setStyle)(e, "height", `${f}px`), (0, i.setStyle)(e, "width", `${d}px`), (0, i.setStyle)(e, "backgroundPosition", `-${(h%c||c-1)*d}px -${m*f}px`), t <= d / 2 ? (0, i.setStyle)(e, "left", 0) : t > o.clientWidth - d / 2 ? (0, i.setStyle)(e, "left", `${o.clientWidth-d}px`) : (0, i.setStyle)(e, "left", `${t-d/2}px`)
-                            }(t) : i.isMobile || (0, i.setStyle)(e, "display", "none"), f && (clearTimeout(s), s = setTimeout(() => {
-                                (0, i.setStyle)(e, "display", "none")
-                            }, 500))
-                        }
-                    })
-                }
-            })
-        }
-    }, {
-        "../utils": "h3rH9",
-        "@parcel/transformer-js/src/esmodule-helpers.js": "guZOB"
-    }],
     c1GeG: [function(e, t, r) {
         var a = e("@parcel/transformer-js/src/esmodule-helpers.js");
         a.defineInteropFlag(r), a.export(r, "default", () => o);
@@ -2929,8 +2938,8 @@ AirPlay: "AirPlay",
                 }));
                 for (let t = 0; t < e.contextmenu.length; t++) this.add(e.contextmenu[t]);
                 t(r, "contextmenu", e => {
-                    if (e.preventDefault(), !this.art.constructor.CONTEXTMENU) return;
-                    this.show = !0;
+                    if (!this.art.constructor.CONTEXTMENU) return;
+                    e.preventDefault(), this.show = !0;
                     let t = e.clientX,
                         o = e.clientY,
                         {
@@ -3098,7 +3107,7 @@ AirPlay: "AirPlay",
         function i(e) {
             return {
                 ...e,
-                html: '<a href="https://ply4.com" target="_blank">Ply4.com</a>'
+                html: '<a href="https://ply4.com" target="_blank">Ply4 5.1.7</a>'
             }
         }
         a.defineInteropFlag(r), a.export(r, "default", () => i)
@@ -3206,6 +3215,7 @@ AirPlay: "AirPlay",
                 let {
                     $subtitle: e
                 } = this.art.template;
+                //subtitle fix
                 e.innerHTML = "", this.activeCue && (this.art.option.subtitle.escape ? e.innerHTML = this.activeCue.text.split(/\r?\n/).map(e => `<div class="art-subtitle-line">${e.replace(/<i>(.*?)<\/i>/g, '<i class="italic">$1</i>').replace(/<br \/>/g, '<br>')}</div>`).join("") : e.innerHTML = this.activeCue.text, this.art.emit("subtitleUpdate", this.activeCue.text))
             }
             async switch (e, t = {}) {
@@ -3721,8 +3731,8 @@ AirPlay: "AirPlay",
             $ = a.interopDefault(M),
             F = e("bundle-text:./config.svg"),
             C = a.interopDefault(F),
-            H = e("bundle-text:./pip.svg"),
-            D = a.interopDefault(H),
+            D = e("bundle-text:./pip.svg"),
+            H = a.interopDefault(D),
             B = e("bundle-text:./lock.svg"),
             z = a.interopDefault(B),
             R = e("bundle-text:./unlock.svg"),
@@ -3759,7 +3769,7 @@ AirPlay: "AirPlay",
                     volumeClose: y.default,
                     screenshot: x.default,
                     setting: j.default,
-                    pip: D.default,
+                    pip: H.default,
                     arrowLeft: S.default,
                     arrowRight: T.default,
                     playbackRate: E.default,
