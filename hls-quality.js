@@ -1,11 +1,3 @@
-// modules are defined as an array
-// [ module function, map of requires ]
-//
-// map of requires is short require name -> numeric require
-//
-// anything defined in a previous bundle is accessed via the
-// orig method which is the require for previous bundles
-
 (function (modules, entry, mainEntry, parcelRequireName, globalName) {
     /* eslint-disable no-undef */
     var globalObject =
@@ -20,13 +12,11 @@
         : {};
     /* eslint-enable no-undef */
   
-    // Save the require from previous bundle to this closure if any
     var previousRequire =
       typeof globalObject[parcelRequireName] === 'function' &&
       globalObject[parcelRequireName];
   
     var cache = previousRequire.cache || {};
-    // Do not use `require` to prevent Webpack from trying to bundle this call
     var nodeRequire =
       typeof module !== 'undefined' &&
       typeof module.require === 'function' &&
@@ -35,9 +25,6 @@
     function newRequire(name, jumped) {
       if (!cache[name]) {
         if (!modules[name]) {
-          // if we cannot find the module within our internal map or
-          // cache jump to the current global require ie. the last bundle
-          // that was added to the page.
           var currentRequire =
             typeof globalObject[parcelRequireName] === 'function' &&
             globalObject[parcelRequireName];
@@ -45,15 +32,10 @@
             return currentRequire(name, true);
           }
   
-          // If there are other bundles on this page the require from the
-          // previous one is saved to 'previousRequire'. Repeat this as
-          // many times as there are bundles until the module is found or
-          // we exhaust the require chain.
           if (previousRequire) {
             return previousRequire(name, true);
           }
   
-          // Try the node require function if it exists.
           if (nodeRequire && typeof name === 'string') {
             return nodeRequire(name);
           }
@@ -123,21 +105,16 @@
     }
   
     if (mainEntry) {
-      // Expose entry point to Node, AMD or browser globals
-      // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
       var mainExports = newRequire(mainEntry);
   
-      // CommonJS
       if (typeof exports === 'object' && typeof module !== 'undefined') {
         module.exports = mainExports;
   
-        // RequireJS
       } else if (typeof define === 'function' && define.amd) {
         define(function () {
           return mainExports;
         });
   
-        // <script>
       } else if (globalName) {
         this[globalName] = mainExports;
       }
@@ -145,8 +122,22 @@
   })({"hMiLQ":[function(require,module,exports) {
   var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
   parcelHelpers.defineInteropFlag(exports);
-  var _imageSvg = require("bundle-text:./image.svg");
-  var _imageSvgDefault = parcelHelpers.interopDefault(_imageSvg);
+
+  // Define the new SVG icon directly as a string
+  var newSvgIcon = `
+  <svg fill="#000000" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <defs><style>.cls-1{fill:none;}</style></defs>
+      <title>HD</title>
+      <path d="M28,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V8A2,2,0,0,0,28,6ZM4,24V8H28V24Z"></path>
+      <path d="M22,11H18V21h4a3,3,0,0,0,3-3V14A3,3,0,0,0,22,11Zm1,7a1,1,0,0,1-1,1H20V13h2a1,1,0,0,1,1,1Z"></path>
+      <polygon points="13 11 13 15 10 15 10 11 8 11 8 21 10 21 10 17 13 17 13 21 15 21 15 11 13 11"></polygon>
+      <rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" class="cls-1" width="32" height="32"></rect>
+    </g>
+  </svg>`;
+
   function artplayerPluginHlsQuality(option) {
       return (art)=>{
           const { $video  } = art.template;
@@ -183,7 +174,7 @@
                   name: "hls-quality",
                   tooltip: defaultHtml,
                   html: title,
-                  icon: (0, _imageSvgDefault.default),
+                  icon: newSvgIcon, // Use the new SVG icon string here
                   width: 200,
                   selector: hls.levels.map((item, index)=>{
                       return {
@@ -212,10 +203,7 @@
   artplayerPluginHlsQuality.build = "2023-04-23 09:44:07";
   if (typeof window !== "undefined") window["artplayerPluginHlsQuality"] = artplayerPluginHlsQuality;
   
-  },{"bundle-text:./image.svg":"1HFaU","@parcel/transformer-js/src/esmodule-helpers.js":"5dUr6"}],"1HFaU":[function(require,module,exports) {
-  module.exports = "<?xml version=\"1.0\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n<svg t=\"1666857514489\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"2580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"24\" height=\"24\"><path d=\"M870.4 176 153.6 176C104.128 176 64 216.128 64 265.6l0 492.736c0 49.472 40.128 89.6 89.6 89.6L870.4 847.936c49.472 0 89.6-40.128 89.6-89.6L960 265.6C960 216.128 919.872 176 870.4 176zM870.4 668.8 825.6 668.8c0 0-29.696-65.792-89.6-89.6s-134.4 89.6-134.4 89.6S535.04 596.992 467.2 444.8C399.36 292.608 153.6 624 153.6 624l0-358.4L870.4 265.6 870.4 668.8zM668.8 489.6c37.056 0 67.2-30.144 67.2-67.264 0-37.056-30.144-67.2-67.2-67.2C631.68 355.2 601.6 385.344 601.6 422.4 601.6 459.52 631.68 489.6 668.8 489.6z\" p-id=\"2581\" fill=\"#ffffff\"></path>\n</svg>";
-  
-  },{}],"5dUr6":[function(require,module,exports) {
+  },{"@parcel/transformer-js/src/esmodule-helpers.js":"5dUr6"}],"5dUr6":[function(require,module,exports) {
   exports.interopDefault = function(a) {
       return a && a.__esModule ? a : {
           default: a
@@ -246,5 +234,3 @@
   };
   
   },{}]},["hMiLQ"], "hMiLQ", "parcelRequire4dc0")
-  
-  //# sourceMappingURL=index.js.map
