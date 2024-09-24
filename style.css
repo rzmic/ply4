@@ -30,3 +30,13 @@
             color: #fff;
             font-size: 24px;
         }
+        .confirm-dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: white;
+            border: 1px solid black;
+            z-index: 1000; /* Ensure it appears above other content */
+          }
