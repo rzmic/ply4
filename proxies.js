@@ -1,7 +1,3 @@
-var proxy2 =''; 
-var proxy3 = ''; 
-var proxy4 = ''; 
-
 const proxies = [
   'https://production.floral-heart-4712-65413-5611399-6536-9862568-fghr9-65fgh6tfghhh.5ebcurz0je.workers.dev/',
   'https://production.m4-math-2250-sdf659899fff-8h5sdf87sdf-sd5fsdfsd12-sdf556sfdsd.hdtzs8r9ph.workers.dev/',
@@ -13,6 +9,11 @@ const proxies = [
   'https://production.spring-truth-2ce098asd-90asdasdloov-8878jcd-89zxckd-9zcjkdkuklk.ply4.workers.dev/'
 ];
 
+const proxies2 = [
+  'https://odd-bird-0dd9-sg435-b4-5bhfgdhfdg456t-hbfgdh-5hfgdh5556dj-678j7.agemueorn.workers.dev/'
+];
+
 // Select a random proxy
 const randomIndex = Math.floor(Math.random() * proxies.length);
 const proxy1 = proxies[randomIndex];
+const proxy2 = proxies2[randomIndex];
