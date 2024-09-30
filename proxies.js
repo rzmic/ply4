@@ -10,7 +10,14 @@ const proxies = [
 ];
 
 const proxies2 = [
-  'https://odd-bird-0dd9-sg435-b4-5bhfgdhfdg456t-hbfgdh-5hfgdh5556dj-678j7.agemueorn.workers.dev/'
+  'https://odd-bird-0dd9-sg435-b4-5bhfgdhfdg456t-hbfgdh-5hfgdh5556dj-678j7.agemueorn.workers.dev/',
+  'https://red-salad-402a324-dsfkl98324-mcds87sdn-987dfne-9834kj8-isabf563.zzirggwjg.workers.dev/',
+  'https://green-wave-9adc8-sf876sf-sdf90900sdfkl-bmnkji93456-fio4590-kfds.jiswciwjg.workers.dev/',
+  'https://rapid-lab-234fasd-oasdaos933-naid76823-mjaksduj-3489n-83asd0099.bwxcsiwjg.workers.dev/',
+  'https://still-rice-580987jhjks-dkiuiy87349-klhns8834j-injsi79jds-93j-k9.y9p4ha1c.workers.dev/',
+  'https://red-butterfly-79adjnkj8hjjkjk0098-89jlkj897hkjh786-asasde555hjg.ahiudjslo.workers.dev/',
+  'https://broad-sunset-53f2-u8jkhjh76ggjhjyt5454657657-kjjk87-980knj89-90.agenzbzow.workers.dev/',
+  'https://wandering-snowflake-d20av4we5vwd45bn6456dtg-54656ftgd546dku-657.gtxskgkai.workers.dev/'  
 ];
 
 // Select a random proxy
