@@ -14,6 +14,7 @@ const proxies2 = [
 ];
 
 // Select a random proxy
-const randomIndex = Math.floor(Math.random() * proxies.length);
-const proxy1 = proxies[randomIndex];
-const proxy2 = proxies2[randomIndex];
+const randomIndex1 = Math.floor(Math.random() * proxies.length);
+const randomIndex2 = Math.floor(Math.random() * proxies2.length);
+const proxy1 = proxies[randomIndex1];
+const proxy2 = proxies2[randomIndex2];
