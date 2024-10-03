@@ -1,12 +1,15 @@
 const proxies = [
-  'https://production.floral-heart-4712-65413-5611399-6536-9862568-fghr9-65fgh6tfghhh.5ebcurz0je.workers.dev/',
-  'https://production.m4-math-2250-sdf659899fff-8h5sdf87sdf-sd5fsdfsd12-sdf556sfdsd.hdtzs8r9ph.workers.dev/',
-  'https://production.m4-kasd8asdasd-av7fggg-hivd7-jsfd7v-sdf7687787xcv-vfjuius-uviuf.r2024-822.workers.dev/',
-  'https://production.m4-unit2-137f123132125665232365898362asd952323333ere32222336585.2eca2e9bx5.workers.dev/',
-  'https://production.m4-field-9780-asd6865-65a54sd-5asdas-45asda-asd54445dfs-hhfg87j.m4-31e.workers.dev/',
-  'https://production.m4-breeze-cc3089sdj-a98sduna0-98asjda908734j9-alkkjxa987-asdlkm.p75zhjx6rt.workers.dev/',
-  'https://production.m4-meadow-858e-8asdj09asdjn9087890-asd890as-kcsec987dc-ckd98-cx.f0o8q1z04c.workers.dev/',
-  'https://production.spring-truth-2ce098asd-90asdasdloov-8878jcd-89zxckd-9zcjkdkuklk.ply4.workers.dev/'
+    'https://throbbing-silence-f177sdf-989345lksdf-34958mmfd-345dfs-345fsdf4.brkskrm457.workers.dev/',
+    'https://lingering-breeze-89a390sa8d-asdio89-asd90asdk-asdjiui89324234-2.tuzeju.workers.dev/',
+    'https://long-forest-d9060as9d-sadjdi734nasd-2jahsdjkhy6fdn-asdj8345-34d.xiloge.workers.dev/',
+    'https://long-artsaldkj-2f8aopisad9874-shahdumgf8945-8954435njjb-3457bnk.lyceda.workers.dev/',
+    'https://aged-art-591509da-asdioiue73434-asdui64545-sdfkj720348-dfk34587.frfsnyz419.workers.dev/',
+    'https://misty-surf-888dsad-uuwey6343434-isdao8fasd9-asdj323476-asd78uuy.bijipelergedeondalgandul.workers.dev/',
+    'https://flat-shape-44fc98asd-asdj2332323-23892839-akiteuy87878-sad67348.titidcilikirengngacengan.workers.dev/',
+    'https://shiny-salad-e287poppo-asd873434-yyy-56567-56udsfhhu87-9238324ds.sukanetegedebokongcilikkitulbae.workers.dev/',
+    'https://shiny-mud-6afbas99234656-9028346hfdskfjsd-3457645hdjie7645-0hds.priakesepianbutuhngewesoalnyangacengbae.workers.dev/',
+    'https://semua-terserah-padamu-akuhanya-manusia-biasa-yangpunya-kontolll.butuhmemeksegar.workers.dev/',
+    'https://ohkenapa-memekitu-enakbanget-apalagidijilat-disedot-dicelup2in.memekbasah.workers.dev/'
 ];
 
 const proxies2 = [
