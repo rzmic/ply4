@@ -2058,7 +2058,7 @@
                         cues: n
                     } = e.subtitle;
                     if (!a.$track || 0 === n.length) return;
-                    let s = (0, o.clamp)(i, -10, 10);
+                    let s = (0, o.clamp)(i, -35, 35);
                     a.$track.offset = s;
                     for (let t = 0; t < n.length; t++) {
                         let r = n[t];
@@ -4381,7 +4381,7 @@
                 html: t.get("Subtitle Offset"),
                 icon: r.subtitle,
                 tooltip: "0s",
-                range: [0, -10, 10, .1],
+                range: [0, -35, 35, 1],
                 onChange: t => (e.subtitleOffset = t.range[0], t.range[0] + "s"),
                 mounted: (t, r) => {
                     e.on("subtitleOffset", e => {
