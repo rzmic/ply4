@@ -4568,39 +4568,64 @@
                 name: "auto-playback",
                 html: `<div class="art-auto-playback-close"></div><div class="art-auto-playback-last"></div><div class="art-auto-playback-jump"></div>`
             }), c = (0, o.query)(".art-auto-playback-last", l), p = (0, o.query)(".art-auto-playback-jump", l), u = (0, o.query)(".art-auto-playback-close", l);
+            
             (0, o.append)(u, r.close);
             let d = null;
-
+        
             function f() {
                 let r = (a.get("times") || {})[e.option.id || e.option.url];
-                clearTimeout(d), (0, o.setStyle)(l, "display", "none"), r && r >= i.AUTO_PLAYBACK_MIN && ((0, o.setStyle)(l, "display", "flex"), c.innerText = `${t.get("Last Seen")} ${(0,o.secondToTime)(r)}`, p.innerText = t.get("Jump Play"), n(u, "click", () => {
-                    (0, o.setStyle)(l, "display", "none")
-                }), n(p, "click", () => {
-                    e.seek = r, e.play(), (0, o.setStyle)(s, "display", "none"), (0, o.setStyle)(l, "display", "none")
-                }), e.once("video:timeupdate", () => {
-                    d = setTimeout(() => {
-                        (0, o.setStyle)(l, "display", "none")
-                    }, i.AUTO_PLAYBACK_TIMEOUT)
-                }))
+                clearTimeout(d);
+                (0, o.setStyle)(l, "display", "none");
+                
+                if (r && r >= i.AUTO_PLAYBACK_MIN) {
+                    (0, o.setStyle)(l, "display", "flex");
+                    c.innerText = `${t.get("Last Seen")} ${(0,o.secondToTime)(r)}`;
+                    p.innerText = t.get("Jump Play");
+        
+                    // Remove the manual click handler for "Jump Play"
+                    // n(u, "click", () => {
+                    //     (0, o.setStyle)(l, "display", "none")
+                    // });
+        
+                    // Automatically trigger the "Jump Play" button click
+                    setTimeout(() => {
+                        e.seek = r;
+                        e.play();
+                        (0, o.setStyle)(s, "display", "none");
+                        (0, o.setStyle)(l, "display", "none");
+                    }, 0); // Trigger it immediately or with a slight delay if needed.
+        
+                    e.once("video:timeupdate", () => {
+                        d = setTimeout(() => {
+                            (0, o.setStyle)(l, "display", "none");
+                        }, i.AUTO_PLAYBACK_TIMEOUT);
+                    });
+                }
             }
+        
             return e.on("video:timeupdate", () => {
                 if (e.playing) {
                     let t = a.get("times") || {},
                         r = Object.keys(t);
-                    r.length > i.AUTO_PLAYBACK_MAX && delete t[r[0]], t[e.option.id || e.option.url] = e.currentTime, a.set("times", t)
+                    if (r.length > i.AUTO_PLAYBACK_MAX) delete t[r[0]];
+                    t[e.option.id || e.option.url] = e.currentTime;
+                    a.set("times", t);
                 }
             }), e.on("ready", f), e.on("restart", f), {
                 name: "auto-playback",
                 get times() {
-                    return a.get("times") || {}
+                    return a.get("times") || {};
                 },
                 clear: () => a.del("times"),
                 delete(e) {
                     let t = a.get("times") || {};
-                    return delete t[e], a.set("times", t), t
+                    delete t[e];
+                    a.set("times", t);
+                    return t;
                 }
-            }
+            };
         }
+        
     }, {
         "../utils": "71aH7",
         "@parcel/transformer-js/src/esmodule-helpers.js": "9pCYc"
