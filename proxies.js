@@ -9,7 +9,19 @@ const proxies = [
     'https://shiny-salad-e287poppo-asd873434-yyy-56567-56udsfhhu87-9238324ds.sukanetegedebokongcilikkitulbae.workers.dev/',
     'https://shiny-mud-6afbas99234656-9028346hfdskfjsd-3457645hdjie7645-0hds.priakesepianbutuhngewesoalnyangacengbae.workers.dev/',
     'https://semua-terserah-padamu-akuhanya-manusia-biasa-yangpunya-kontolll.butuhmemeksegar.workers.dev/',
-    'https://ohkenapa-memekitu-enakbanget-apalagidijilat-disedot-dicelup2in.memekbasah.workers.dev/'
+    'https://ohkenapa-memekitu-enakbanget-apalagidijilat-disedot-dicelup2in.memekbasah.workers.dev/',
+    'https://lakjsd877j34-http-uiausdsad-com-jjasduye-www-ju834957-net-89jcn.noavan.workers.dev/',
+    'https://kalaumau878-jasd87-http-jkasdldasd-com-ju8893-www-iurenj893-net.salahsijiojodumehnektitidesilickyorapopo.workers.dev/',
+    'https://kjalsdh876-akjdl778-http-hjajkshdu923476-www-uifnsdf-com-7834-n.hasudhaskd87364hjhjyusdyf768234989hjhjas.workers.dev/',
+    'https://kajshd876-http-asjkhndkjashd7862374h-com-kjahskdueir-www-jaksdj.kajshd76324jknjhjasd8734434zxdfs324.workers.dev/',
+    'https://jhasdf87-http-uieyrnbkjhsadsadas-com-www-8347jk87-net-j7868394j.http-jasdhjue3656sdferfffdy8783-com.workers.dev/',
+    'https://ksjadk87jkjker89r79-http-akjshd8768-www-uy8763-com-jhdu6734-net.http-iuiewr873455454jccsdfj874435435-com-net.workers.dev/',
+    'https://jhsdf87-https-ikjhasd78324-com-jkduyre7-www-iuyiydsfn984-net-ks.tristan794511.workers.dev/',
+    'https://ui67834-https-iuer7485-com-www-89745jkjk89345-net-kjsdf87435345.carter46743.workers.dev/',
+    'https://jksdhfkdjs876435-https-iusdfksdjf-com-hjuieyr678-www-jksuifer-n.austin261003.workers.dev/',
+    'https://oiewurijn87345-https-oiuyerwer-com-yewr-www-iuydsfi9-net-ksjdfs.olivia669490.workers.dev/',
+    'https://uwerijbhc89345-https-iuer7485-com-jeru7-www-iudfs7435-net-jsdkf.noah502822.workers.dev/',
+    'https://assdsa6763-https-iasudinnv7-com-tyee-www-uiusdank932-net-kasdh8.kirkak.workers.dev/'
   ];
   
   const proxies2 = [
