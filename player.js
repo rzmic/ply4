@@ -79,14 +79,14 @@
             M = a.interopDefault(E),
             F = e("./hotkey"),
             H = a.interopDefault(F),
-            z = e("./layer"),
-            D = a.interopDefault(z),
+            D = e("./layer"),
+            z = a.interopDefault(D),
             A = e("./loading"),
             R = a.interopDefault(A),
             O = e("./notice"),
-            Y = a.interopDefault(O),
-            L = e("./mask"),
-            P = a.interopDefault(L),
+            L = a.interopDefault(O),
+            Y = e("./mask"),
+            P = a.interopDefault(Y),
             V = e("./icons"),
             q = a.interopDefault(V),
             _ = e("./setting"),
@@ -101,7 +101,7 @@
             constructor(e, t) {
                 super(), this.id = ++Z;
                 let r = p.mergeDeep(G.option, e);
-                if (r.container = e.container, this.option = (0, s.default)(r, d.default), this.isLock = !1, this.isReady = !1, this.isFocus = !1, this.isInput = !1, this.isRotate = !1, this.isDestroy = !1, this.template = new g.default(this), this.events = new M.default(this), this.storage = new W.default(this), this.icons = new q.default(this), this.i18n = new y.default(this), this.notice = new Y.default(this), this.player = new x.default(this), this.layers = new D.default(this), this.controls = new j.default(this), this.contextmenu = new C.default(this), this.subtitle = new $.default(this), this.info = new I.default(this), this.loading = new R.default(this), this.hotkey = new H.default(this), this.mask = new P.default(this), this.setting = new N.default(this), this.plugins = new K.default(this), "function" == typeof t && this.on("ready", () => t.call(this, this)), G.DEBUG) {
+                if (r.container = e.container, this.option = (0, s.default)(r, d.default), this.isLock = !1, this.isReady = !1, this.isFocus = !1, this.isInput = !1, this.isRotate = !1, this.isDestroy = !1, this.template = new g.default(this), this.events = new M.default(this), this.storage = new W.default(this), this.icons = new q.default(this), this.i18n = new y.default(this), this.notice = new L.default(this), this.player = new x.default(this), this.layers = new z.default(this), this.controls = new j.default(this), this.contextmenu = new C.default(this), this.subtitle = new $.default(this), this.info = new I.default(this), this.loading = new R.default(this), this.hotkey = new H.default(this), this.mask = new P.default(this), this.setting = new N.default(this), this.plugins = new K.default(this), "function" == typeof t && this.on("ready", () => t.call(this, this)), G.DEBUG) {
                     let e = e => console.log(`[ART.${this.id}] -> ${e}`);
                     e("Version@" + G.version), e("Env@" + G.env), e("Build@" + G.build);
                     for (let t = 0; t < h.default.events.length; t++) this.on("video:" + h.default.events[t], t => e("Event@" + t.type))
@@ -112,13 +112,13 @@
                 return X
             }
             static get version() {
-                return "5.2.1"
+                return "5.2.2"
             }
             static get env() {
                 return "production"
             }
             static get build() {
-                return "2024-10-26 15:26:30"
+                return "2025-01-19 17:32:44"
             }
             static get config() {
                 return h.default
@@ -209,7 +209,7 @@
                     icons: {},
                     cssVar: {},
                     customType: {},
-                    lang: navigator.language.toLowerCase()
+                    lang: navigator?.language.toLowerCase()
                 }
             }
             get proxy() {
@@ -226,7 +226,7 @@
             }
         }
         r.default = G, G.STYLE = i.default, G.DEBUG = !1, G.CONTEXTMENU = !0, G.NOTICE_TIME = 2e3, G.SETTING_WIDTH = 250, G.SETTING_ITEM_WIDTH = 200, G.SETTING_ITEM_HEIGHT = 35, G.RESIZE_TIME = 200, G.SCROLL_TIME = 200, G.SCROLL_GAP = 50, G.AUTO_PLAYBACK_MAX = 10, G.AUTO_PLAYBACK_MIN = 5, G.AUTO_PLAYBACK_TIMEOUT = 3e3, G.RECONNECT_TIME_MAX = 5, G.RECONNECT_SLEEP_TIME = 1e3, G.CONTROL_HIDE_TIME = 3e3, G.DBCLICK_TIME = 300, G.DBCLICK_FULLSCREEN = !0, G.MOBILE_DBCLICK_PLAY = !0, G.MOBILE_CLICK_PLAY = !1, G.AUTO_ORIENTATION_TIME = 200, G.INFO_LOOP_TIME = 1e3, G.FAST_FORWARD_VALUE = 3, G.FAST_FORWARD_TIME = 1e3, G.TOUCH_MOVE_RATIO = .5, G.VOLUME_STEP = .1, G.SEEK_STEP = 5, G.PLAYBACK_RATE = [.5, .75, 1, 1.25, 1.5, 2], G.ASPECT_RATIO = ["default", "4:3", "16:9"], G.FLIP = ["normal", "horizontal", "vertical"], G.FULLSCREEN_WEB_IN_BODY = !1, G.LOG_VERSION = !0, G.USE_RAF = !1, p.isBrowser && (window.Artplayer = G, p.setStyleText("artplayer-style", i.default), setTimeout(() => {
-            G.LOG_VERSION && console.log(`%c ply4.com %c ${G.version} %c https://ply4.com`, "color: #fff; background: #5f5f5f", "color: #fff; background: #4bc729", "")
+            G.LOG_VERSION && console.log(`%c Ply4.com %c ${G.version} %c https://ply4.com`, "color: #fff; background: #5f5f5f", "color: #fff; background: #4bc729", "")
         }, 100))
     }, {
         "bundle-text:./style/index.less": "0016T",
@@ -568,11 +568,9 @@
 
         function k(e, t) {
             let r = document.getElementById(e);
-            if (r) r.textContent = t;
-            else {
-                let r = w("style");
-                r.id = e, r.textContent = t, document.head.appendChild(r)
-            }
+            r || ((r = document.createElement("style")).id = e, "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", () => {
+                document.head.appendChild(r)
+            }) : (document.head || document.documentElement).appendChild(r)), r.textContent = t
         }
 
         function C() {
@@ -587,7 +585,7 @@
         function I(e, t) {
             return new Promise((r, a) => {
                 let o = new Image;
-                o.crossOrigin = "Anonymous", o.onload = function() {
+                o.onload = function() {
                     if (t && 1 !== t) {
                         let i = document.createElement("canvas"),
                             n = i.getContext("2d");
@@ -930,7 +928,7 @@
                 (0, a.errorHandle)("div" === o, `Unsupported container element type, only support 'div' but got '${o}'`), (0, a.errorHandle)(r.instances.every(e => e.template.$container !== this.$container), "Cannot mount multiple instances on the same dom element"), this.query = this.query.bind(this), this.$container.dataset.artId = e.id, this.init()
             }
             static get html() {
-                return `<div class="art-video-player art-subtitle-show art-layer-show art-control-show art-mask-show"><video class="art-video"><track default kind="metadata" src=""></track></video><div class="art-poster"></div><div class="art-subtitle"></div><div class="art-danmuku"></div><div class="art-layers"></div><div class="art-mask"><div class="art-state"></div></div><div class="art-bottom"><div class="art-progress"></div><div class="art-controls"><div class="art-controls-left"></div><div class="art-controls-center"></div><div class="art-controls-right"></div></div></div><div class="art-loading"></div><div class="art-notice"><div class="art-notice-inner"></div></div><div class="art-settings"></div><div class="art-info"><div class="art-info-panel"><div class="art-info-item"><div class="art-info-title">Player version:</div><div class="art-info-content">5.2.1</div></div><div class="art-info-item"><div class="art-info-title">Video url:</div><div class="art-info-content" data-video="src"></div></div><div class="art-info-item"><div class="art-info-title">Video volume:</div><div class="art-info-content" data-video="volume"></div></div><div class="art-info-item"><div class="art-info-title">Video time:</div><div class="art-info-content" data-video="currentTime"></div></div><div class="art-info-item"><div class="art-info-title">Video duration:</div><div class="art-info-content" data-video="duration"></div></div><div class="art-info-item"><div class="art-info-title">Video resolution:</div><div class="art-info-content"><span data-video="videoWidth"></span>x<span data-video="videoHeight"></span></div></div></div><div class="art-info-close">[x]</div></div><div class="art-contextmenus"></div></div>`
+                return `<div class="art-video-player art-subtitle-show art-layer-show art-control-show art-mask-show"><video class="art-video"><track default kind="metadata" src=""></track></video><div class="art-poster"></div><div class="art-subtitle"></div><div class="art-danmuku"></div><div class="art-layers"></div><div class="art-mask"><div class="art-state"></div></div><div class="art-bottom"><div class="art-progress"></div><div class="art-controls"><div class="art-controls-left"></div><div class="art-controls-center"></div><div class="art-controls-right"></div></div></div><div class="art-loading"></div><div class="art-notice"><div class="art-notice-inner"></div></div><div class="art-settings"></div><div class="art-info"><div class="art-info-panel"><div class="art-info-item"><div class="art-info-title">Player version:</div><div class="art-info-content">5.2.2</div></div><div class="art-info-item"><div class="art-info-title">Video url:</div><div class="art-info-content" data-video="src"></div></div><div class="art-info-item"><div class="art-info-title">Video volume:</div><div class="art-info-content" data-video="volume"></div></div><div class="art-info-item"><div class="art-info-title">Video time:</div><div class="art-info-content" data-video="currentTime"></div></div><div class="art-info-item"><div class="art-info-title">Video duration:</div><div class="art-info-content" data-video="duration"></div></div><div class="art-info-item"><div class="art-info-title">Video resolution:</div><div class="art-info-content"><span data-video="videoWidth"></span>x<span data-video="videoHeight"></span></div></div></div><div class="art-info-close">[x]</div></div><div class="art-contextmenus"></div></div>`
             }
             query(e) {
                 return (0, a.query)(e, this.$container)
@@ -1058,13 +1056,13 @@
             M = e("./fullscreenMix"),
             F = a.interopDefault(M),
             H = e("./fullscreenWebMix"),
-            z = a.interopDefault(H),
-            D = e("./pipMix"),
-            A = a.interopDefault(D),
+            D = a.interopDefault(H),
+            z = e("./pipMix"),
+            A = a.interopDefault(z),
             R = e("./loadedMix"),
             O = a.interopDefault(R),
-            Y = e("./playedMix"),
-            L = a.interopDefault(Y),
+            L = e("./playedMix"),
+            Y = a.interopDefault(L),
             P = e("./playingMix"),
             V = a.interopDefault(P),
             q = e("./autoSizeMix"),
@@ -1101,7 +1099,7 @@
             eb = a.interopDefault(ey);
         r.default = class {
             constructor(e) {
-                (0, i.default)(e), (0, s.default)(e), (0, c.default)(e), (0, u.default)(e), (0, f.default)(e), (0, m.default)(e), (0, v.default)(e), (0, b.default)(e), (0, w.default)(e), (0, k.default)(e), (0, S.default)(e), (0, T.default)(e), (0, E.default)(e), (0, F.default)(e), (0, z.default)(e), (0, A.default)(e), (0, O.default)(e), (0, L.default)(e), (0, V.default)(e), (0, _.default)(e), (0, B.default)(e), (0, U.default)(e), (0, Z.default)(e), (0, G.default)(e), (0, J.default)(e), (0, et.default)(e), (0, ea.default)(e), (0, ei.default)(e), (0, es.default)(e), (0, ec.default)(e), (0, eu.default)(e), (0, ef.default)(e), (0, em.default)(e), (0, eb.default)(e), (0, ev.default)(e)
+                (0, i.default)(e), (0, s.default)(e), (0, c.default)(e), (0, u.default)(e), (0, f.default)(e), (0, m.default)(e), (0, v.default)(e), (0, b.default)(e), (0, w.default)(e), (0, k.default)(e), (0, S.default)(e), (0, T.default)(e), (0, E.default)(e), (0, F.default)(e), (0, D.default)(e), (0, A.default)(e), (0, O.default)(e), (0, Y.default)(e), (0, V.default)(e), (0, _.default)(e), (0, B.default)(e), (0, U.default)(e), (0, Z.default)(e), (0, G.default)(e), (0, J.default)(e), (0, et.default)(e), (0, ea.default)(e), (0, ei.default)(e), (0, es.default)(e), (0, ec.default)(e), (0, eu.default)(e), (0, ef.default)(e), (0, em.default)(e), (0, eb.default)(e), (0, ev.default)(e)
             }
         }
     }, {
@@ -1511,13 +1509,13 @@
                 }
             } = e, s = e => {
                 (0, i.default).on("change", () => {
-                    e.emit("fullscreen", i.default.isFullscreen)
+                    e.emit("fullscreen", i.default.isFullscreen), i.default.isFullscreen ? (e.state = "fullscreen", (0, n.addClass)(o, "art-fullscreen")) : (0, n.removeClass)(o, "art-fullscreen"), e.emit("resize")
                 }), (0, i.default).on("error", t => {
                     e.emit("fullscreenError", t)
                 }), (0, n.def)(e, "fullscreen", {
                     get: () => i.default.isFullscreen,
-                    async set(t) {
-                        t ? (e.state = "fullscreen", await (0, i.default).request(o), (0, n.addClass)(o, "art-fullscreen")) : (await (0, i.default).exit(), (0, n.removeClass)(o, "art-fullscreen")), e.emit("resize")
+                    async set(e) {
+                        e ? await (0, i.default).request(o) : await (0, i.default).exit()
                     }
                 })
             }, l = e => {
@@ -3130,7 +3128,7 @@
         function o(e) {
             return {
                 ...e,
-                html: '<a href="https://ply4.com" target="_blank">ply4.com 5.2.1</a>'
+                html: '<a href="https://ply4.com" target="_blank">ply4 5.2.2</a>'
             }
         }
         a.defineInteropFlag(r), a.export(r, "default", () => o)
@@ -3246,7 +3244,6 @@
                         $subtitle: t
                     }
                 } = this.art;
-                
                 //subtitle fix
                 t.innerHTML = "", this.activeCues.length && (this.art.emit("subtitleBeforeUpdate", this.activeCues), t.innerHTML = this.activeCues.map((t, r) => t.text.split(/\r?\n/).filter(e => e.trim()).map(t => `<div class="art-subtitle-line" data-group="${r}">${t.replace(/<i>(.*?)<\/i>/g, '<i class="italic">$1</i>').replace(/<br \/>/g, '<br>')}</div>`).join("")).join(""), this.art.emit("subtitleAfterUpdate", this.activeCues));
             }
@@ -3763,14 +3760,14 @@
             M = a.interopDefault(E),
             F = e("bundle-text:./config.svg"),
             H = a.interopDefault(F),
-            z = e("bundle-text:./pip.svg"),
-            D = a.interopDefault(z),
+            D = e("bundle-text:./pip.svg"),
+            z = a.interopDefault(D),
             A = e("bundle-text:./lock.svg"),
             R = a.interopDefault(A),
             O = e("bundle-text:./unlock.svg"),
-            Y = a.interopDefault(O),
-            L = e("bundle-text:./fullscreen-off.svg"),
-            P = a.interopDefault(L),
+            L = a.interopDefault(O),
+            Y = e("bundle-text:./fullscreen-off.svg"),
+            P = a.interopDefault(Y),
             V = e("bundle-text:./fullscreen-on.svg"),
             q = a.interopDefault(V),
             _ = e("bundle-text:./fullscreen-web-off.svg"),
@@ -3801,7 +3798,7 @@
                     volumeClose: y.default,
                     screenshot: x.default,
                     setting: j.default,
-                    pip: D.default,
+                    pip: z.default,
                     arrowLeft: C.default,
                     arrowRight: I.default,
                     playbackRate: $.default,
@@ -3809,7 +3806,7 @@
                     config: H.default,
                     lock: R.default,
                     flip: Q.default,
-                    unlock: Y.default,
+                    unlock: L.default,
                     fullscreenOff: P.default,
                     fullscreenOn: q.default,
                     fullscreenWebOff: N.default,
@@ -4040,7 +4037,8 @@
                         } = (0, h.getRect)(a),
                         p = n - l + s / 2 - i / 2,
                         u = this.active === this.option ? this.active.length * r : (this.active.length + 1) * r;
-                    (0, h.setStyle)(o, "height", `${u}px`), (0, h.setStyle)(o, "width", `${i}px`), p + i > c ? ((0, h.setStyle)(o, "left", null), (0, h.setStyle)(o, "right", null)) : ((0, h.setStyle)(o, "left", `${p}px`), (0, h.setStyle)(o, "right", "auto"))
+                    if ((0, h.setStyle)(o, "height", `${u}px`), (0, h.setStyle)(o, "width", `${i}px`), this.art.isRotate || h.isMobile) return;
+                    p + i > c ? ((0, h.setStyle)(o, "left", null), (0, h.setStyle)(o, "right", null)) : ((0, h.setStyle)(o, "left", `${p}px`), (0, h.setStyle)(o, "right", "auto"))
                 }
             }
             inactivate(e) {
@@ -4625,7 +4623,6 @@
                 }
             };
         }
-        
     }, {
         "../utils": "71aH7",
         "@parcel/transformer-js/src/esmodule-helpers.js": "9pCYc"
